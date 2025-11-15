@@ -11,12 +11,14 @@ import {
   saveLessonProgress,
   setCurrentLesson,
   getCurrentLessonId,
-  getStoredData,
 } from "@/lib/storage";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Home, Lightbulb } from "lucide-react";
 import type { LessonProgress } from "@/lib/storage";
 import type { Lesson, LessonStep } from "@/lib/lessons";
+
+const DUCK_IMAGE =
+  "https://cdn.builder.io/api/v1/image/assets%2F6383f97492d4498fb140746bb5dc13c8%2Fc88ba0d9380648349ffa20411291a104?format=webp&width=800";
 
 export default function Learn() {
   const [lesson, setLesson] = useState<Lesson | null>(null);
@@ -154,10 +156,16 @@ export default function Learn() {
 
   if (!lesson || !progress) {
     return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="text-center">
-          <div className="w-12 h-12 rounded-full border-4 border-blue-200 border-t-blue-600 animate-spin mx-auto mb-4"></div>
-          <p className="text-gray-600">Loading your lesson...</p>
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-cyan-300 to-sky-200">
+        <div className="text-center space-y-4">
+          <img
+            src={DUCK_IMAGE}
+            alt="iQuack"
+            className="w-24 h-24 mx-auto animate-bounce"
+          />
+          <p className="text-gray-700 font-bold text-lg">
+            iQuack is loading your lesson... 🦆
+          </p>
         </div>
       </div>
     );
@@ -170,18 +178,24 @@ export default function Learn() {
     currentStepIndex === lesson.steps.length - 1 && isStepComplete();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-200 via-sky-100 to-purple-100">
       {/* Top Navigation */}
-      <nav className="bg-white border-b border-gray-200 sticky top-0 z-40">
+      <nav className="bg-white/95 backdrop-blur-sm border-b-4 border-purple-400 sticky top-0 z-40 shadow-lg">
         <div className="max-w-full px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="flex items-center gap-2 hover:opacity-70">
-              <Home className="w-5 h-5 text-blue-600" />
-              <span className="font-semibold text-gray-900">CodeLearn</span>
+            <Link to="/" className="flex items-center gap-3 hover:opacity-70">
+              <img
+                src={DUCK_IMAGE}
+                alt="iQuack"
+                className="w-8 h-8 animate-wiggle"
+              />
+              <span className="font-black text-xl bg-gradient-to-r from-purple-600 to-pink-500 bg-clip-text text-transparent">
+                iQuack
+              </span>
             </Link>
             <div className="flex items-center gap-4">
               <div className="hidden sm:block">
-                <span className="text-sm font-medium text-gray-600">
+                <span className="text-sm font-bold text-gray-700">
                   Lesson {currentLessonIndex + 1} of {allLessons.length}
                 </span>
               </div>
@@ -193,67 +207,67 @@ export default function Learn() {
       {/* Main Content */}
       <div className="max-w-full h-[calc(100vh-73px)] flex">
         {/* Left Panel */}
-        <div className="w-full lg:w-1/2 flex flex-col bg-white lg:border-r border-gray-200 overflow-hidden">
+        <div className="w-full lg:w-1/2 flex flex-col bg-white/90 lg:border-r-4 border-yellow-300 overflow-hidden">
           {/* Instructions Section */}
-          <div className="flex-1 overflow-y-auto border-b lg:border-b-0 border-gray-200">
+          <div className="flex-1 overflow-y-auto border-b-4 lg:border-b-0 border-yellow-300">
             <div className="p-6 space-y-6">
               <div>
-                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
+                <h1 className="text-3xl sm:text-4xl font-black text-gray-800">
                   {lesson.title}
                 </h1>
-                <p className="text-gray-600 mt-2">{lesson.description}</p>
+                <p className="text-gray-700 mt-2 font-semibold">
+                  {lesson.description}
+                </p>
               </div>
 
               {/* Progress Bar */}
-              <div className="space-y-2">
+              <div className="space-y-2 bg-gradient-to-r from-purple-100 to-pink-100 p-4 rounded-2xl border-4 border-purple-300">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-gray-700">
-                    Progress
+                  <span className="text-sm font-bold text-gray-800">
+                    Your Progress
                   </span>
-                  <span className="text-sm font-medium text-blue-600">
+                  <span className="text-lg font-black text-purple-600">
                     {currentStepIndex + 1}/{lesson.steps.length}
                   </span>
                 </div>
-                <div className="w-full h-2 bg-gray-200 rounded-full overflow-hidden">
+                <div className="w-full h-4 bg-gray-300 rounded-full overflow-hidden border-2 border-gray-400">
                   <div
-                    className="h-full bg-gradient-to-r from-blue-500 to-purple-600 transition-all duration-300"
+                    className="h-full bg-gradient-to-r from-purple-500 via-pink-500 to-orange-400 transition-all duration-300"
                     style={{ width: `${stepCompletion}%` }}
                   ></div>
                 </div>
               </div>
 
               {isLessonComplete ? (
-                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
-                  <div className="flex gap-3">
-                    <div className="text-2xl">🎉</div>
-                    <div>
-                      <h3 className="font-semibold text-green-900">
-                        Lesson Complete!
-                      </h3>
-                      <p className="text-sm text-green-800 mt-1">
-                        Great job! You've finished this lesson. Ready for the next
-                        challenge?
-                      </p>
-                    </div>
-                  </div>
+                <div className="bg-gradient-to-br from-green-200 to-emerald-100 border-4 border-green-500 rounded-2xl p-6 text-center">
+                  <div className="text-6xl mb-4">🎉</div>
+                  <h3 className="font-black text-green-800 text-2xl mb-2">
+                    You're Awesome!
+                  </h3>
+                  <p className="text-green-700 font-bold text-lg">
+                    You completed "{lesson.title}"! iQuack is so proud of you! 🦆
+                  </p>
+                  <p className="text-green-700 font-semibold mt-3">
+                    Ready for the next challenge?
+                  </p>
                 </div>
               ) : (
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 space-y-3">
+                <div className="bg-gradient-to-br from-blue-100 to-sky-100 border-4 border-blue-400 rounded-2xl p-4 space-y-4">
                   <div className="flex items-start gap-3">
-                    <Lightbulb className="w-5 h-5 text-blue-600 mt-0.5 flex-shrink-0" />
-                    <div>
-                      <h3 className="font-semibold text-blue-900">
+                    <span className="text-3xl flex-shrink-0">🎯</span>
+                    <div className="flex-1">
+                      <h3 className="font-black text-blue-900 text-lg">
                         Step {currentStepIndex + 1}
                       </h3>
-                      <p className="text-sm text-blue-800 mt-2">
+                      <p className="text-blue-800 font-bold mt-2 text-base leading-relaxed">
                         {currentStep?.instruction}
                       </p>
                     </div>
                   </div>
 
                   {showHint && (
-                    <div className="bg-blue-100 border-l-4 border-blue-600 p-3 rounded text-sm text-blue-900">
-                      <strong>Hint:</strong> {currentStep?.hint}
+                    <div className="bg-yellow-200 border-l-4 border-yellow-600 p-3 rounded-lg text-blue-900 font-bold">
+                      💡 {currentStep?.hint}
                     </div>
                   )}
 
@@ -263,18 +277,18 @@ export default function Learn() {
                         variant="outline"
                         size="sm"
                         onClick={() => setShowHint(true)}
-                        className="text-xs"
+                        className="text-xs font-bold border-2"
                       >
-                        Show Hint
+                        Need a Hint? 💡
                       </Button>
                     )}
                     {isStepComplete() && (
                       <Button
                         size="sm"
-                        className="bg-green-600 hover:bg-green-700 text-white text-xs"
+                        className="bg-gradient-to-r from-green-500 to-emerald-500 hover:shadow-lg text-white font-black text-xs"
                         onClick={handleNextStep}
                       >
-                        ✓ Step Complete
+                        ✓ Great Job!
                       </Button>
                     )}
                   </div>
@@ -284,10 +298,10 @@ export default function Learn() {
           </div>
 
           {/* Code Editor Section */}
-          <div className="flex-1 overflow-hidden border-t border-gray-200 flex flex-col">
-            <div className="px-6 py-4 bg-gray-50 border-b border-gray-200">
-              <h2 className="font-semibold text-gray-900 text-sm">
-                Your HTML Code
+          <div className="flex-1 overflow-hidden border-t-4 border-yellow-300 flex flex-col bg-gradient-to-b from-gray-50 to-white">
+            <div className="px-6 py-4 bg-gradient-to-r from-purple-400 to-pink-400 border-b-4 border-purple-500">
+              <h2 className="font-black text-white text-base">
+                ✏️ Your HTML Code
               </h2>
             </div>
             <textarea
@@ -301,10 +315,10 @@ export default function Learn() {
         </div>
 
         {/* Right Panel - Preview */}
-        <div className="hidden lg:flex w-1/2 flex-col bg-gray-100 border-l border-gray-200 overflow-hidden">
-          <div className="px-6 py-4 bg-white border-b border-gray-200">
-            <h2 className="font-semibold text-gray-900 text-sm">
-              Your Creation
+        <div className="hidden lg:flex w-1/2 flex-col bg-white border-l-4 border-purple-400 overflow-hidden">
+          <div className="px-6 py-4 bg-gradient-to-r from-orange-400 to-yellow-300 border-b-4 border-orange-500">
+            <h2 className="font-black text-white text-base">
+              🎨 Your Creation
             </h2>
           </div>
           <div className="flex-1 overflow-auto bg-white">
@@ -320,17 +334,17 @@ export default function Learn() {
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       padding: 20px;
-      background-color: #f9fafb;
+      background: linear-gradient(135deg, #fde68a 0%, #fca5a5 100%);
       margin: 0;
-      line-height: 1.6;
+      line-height: 1.8;
       color: #333;
     }
-    h1 { color: #1f2937; font-size: 2em; margin-bottom: 0.5em; }
-    h2 { color: #374151; font-size: 1.5em; margin-bottom: 0.5em; }
-    p { margin-bottom: 1em; }
+    h1 { color: #7c3aed; font-size: 2.5em; margin-bottom: 0.5em; text-shadow: 2px 2px 4px rgba(0,0,0,0.1); }
+    h2 { color: #db2777; font-size: 1.8em; margin-bottom: 0.5em; }
+    p { margin-bottom: 1em; font-size: 1.1em; }
     ul, ol { margin-bottom: 1em; }
-    img { max-width: 100%; height: auto; margin: 10px 0; }
-    li { margin-bottom: 0.5em; }
+    img { max-width: 100%; height: auto; margin: 15px 0; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+    li { margin-bottom: 0.8em; font-size: 1.1em; }
   </style>
 </head>
 <body>
@@ -343,11 +357,9 @@ ${code}
       </div>
 
       {/* Mobile Preview Modal */}
-      <div className="lg:hidden fixed bottom-0 left-0 right-0 h-1/3 bg-white border-t border-gray-200 overflow-hidden z-30">
-        <div className="px-6 py-4 bg-white border-b border-gray-200">
-          <h2 className="font-semibold text-gray-900 text-sm">
-            Your Creation
-          </h2>
+      <div className="lg:hidden fixed bottom-0 left-0 right-0 h-1/3 bg-white border-t-4 border-orange-400 overflow-hidden z-30">
+        <div className="px-6 py-3 bg-gradient-to-r from-orange-400 to-yellow-300 border-b-4 border-orange-500">
+          <h2 className="font-black text-white text-sm">🎨 Your Creation</h2>
         </div>
         <div className="flex-1 overflow-auto">
           <iframe
@@ -362,17 +374,17 @@ ${code}
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
       padding: 10px;
-      background-color: #f9fafb;
+      background: linear-gradient(135deg, #fde68a 0%, #fca5a5 100%);
       margin: 0;
       line-height: 1.6;
       color: #333;
       font-size: 14px;
     }
-    h1 { color: #1f2937; font-size: 1.5em; margin: 0.25em 0; }
-    h2 { color: #374151; font-size: 1.2em; margin: 0.25em 0; }
+    h1 { color: #7c3aed; font-size: 1.8em; margin: 0.25em 0; }
+    h2 { color: #db2777; font-size: 1.4em; margin: 0.25em 0; }
     p { margin-bottom: 0.5em; }
     ul, ol { margin-bottom: 0.5em; margin-left: 1.5em; }
-    img { max-width: 100%; height: auto; margin: 5px 0; }
+    img { max-width: 100%; height: auto; margin: 5px 0; border-radius: 8px; }
     li { margin-bottom: 0.25em; }
   </style>
 </head>
@@ -385,24 +397,24 @@ ${code}
       </div>
 
       {/* Bottom Navigation */}
-      <div className="lg:hidden fixed bottom-1/3 left-0 right-0 bg-white border-t border-gray-200 px-4 py-3 flex gap-2 justify-between">
+      <div className="lg:hidden fixed bottom-1/3 left-0 right-0 bg-white border-t-4 border-purple-400 px-4 py-3 flex gap-2 justify-between shadow-lg">
         <Button
           variant="outline"
           size="sm"
           onClick={handlePreviousLesson}
           disabled={currentLessonIndex === 0}
-          className="flex-1"
+          className="flex-1 font-bold border-2"
         >
           <ChevronLeft className="w-4 h-4 mr-1" />
-          Previous
+          Back
         </Button>
         {isLessonComplete && currentLessonIndex < allLessons.length - 1 && (
           <Button
             size="sm"
             onClick={handleNextLesson}
-            className="flex-1 bg-gradient-to-r from-blue-500 to-purple-600"
+            className="flex-1 bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold"
           >
-            Next Lesson
+            Next 🦆
             <ChevronRight className="w-4 h-4 ml-1" />
           </Button>
         )}
@@ -415,17 +427,18 @@ ${code}
           size="sm"
           onClick={handlePreviousLesson}
           disabled={currentLessonIndex === 0}
+          className="font-bold border-2"
         >
           <ChevronLeft className="w-4 h-4 mr-1" />
-          Previous
+          Back
         </Button>
         {isLessonComplete && currentLessonIndex < allLessons.length - 1 && (
           <Button
             size="sm"
             onClick={handleNextLesson}
-            className="bg-gradient-to-r from-blue-500 to-purple-600 text-white"
+            className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold"
           >
-            Next Lesson
+            Next 🦆
             <ChevronRight className="w-4 h-4 ml-1" />
           </Button>
         )}
