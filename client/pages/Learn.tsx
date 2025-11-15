@@ -171,8 +171,7 @@ export default function Learn() {
     );
   }
 
-  const stepCompletion =
-    ((currentStepIndex + 1) / lesson.steps.length) * 100;
+  const stepCompletion = ((currentStepIndex + 1) / lesson.steps.length) * 100;
   const isLessonComplete = progress.completed;
   const canGoNext =
     currentStepIndex === lesson.steps.length - 1 && isStepComplete();
@@ -243,7 +242,8 @@ export default function Learn() {
                     You're Awesome!
                   </h3>
                   <p className="text-green-700 font-bold text-lg">
-                    You completed "{lesson.title}"! iQuack is so proud of you! 🦆
+                    You completed "{lesson.title}"! iQuack is so proud of you!
+                    🦆
                   </p>
                 </div>
               ) : (
@@ -425,7 +425,9 @@ ${code}
         <Button
           size="sm"
           onClick={handleNextLesson}
-          disabled={!isLessonComplete || currentLessonIndex >= allLessons.length - 1}
+          disabled={
+            !isLessonComplete || currentLessonIndex >= allLessons.length - 1
+          }
           className="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-bold"
         >
           Next Website 🦆
