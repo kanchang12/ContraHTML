@@ -71,8 +71,8 @@
   }
 
   @keyframes pulse-glow {
-    0%, 100% { filter: drop-shadow(0 0 5px rgba(39, 100% 55%, 0.5)); }
-    50% { filter: drop-shadow(0 0 20px rgba(276, 100%, 55%, 0.8)); }
+    0%, 100% { filter: drop-shadow(0 0 5px rgba(139, 69, 255, 0.5)); }
+    50% { filter: drop-shadow(0 0 20px rgba(139, 69, 255, 0.8)); }
   }
 
   .animate-bounce-duck {
