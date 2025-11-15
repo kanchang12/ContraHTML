@@ -311,7 +311,7 @@ export default function Learn() {
             <iframe
               key={code}
               title="preview"
-              sandbox={{}}
+              sandbox=""
               className="w-full h-full border-none"
               srcDoc={`<!DOCTYPE html>
 <html>
