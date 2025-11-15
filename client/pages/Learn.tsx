@@ -177,7 +177,7 @@ export default function Learn() {
     currentStepIndex === lesson.steps.length - 1 && isStepComplete();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-cyan-200 via-sky-100 to-purple-100">
+    <div className="min-h-screen bg-gradient-to-br from-cyan-200 via-sky-100 to-purple-100 flex flex-col">
       {/* Top Navigation */}
       <nav className="bg-white/95 backdrop-blur-sm border-b-4 border-purple-400 sticky top-0 z-40 shadow-lg">
         <div className="max-w-full px-4 sm:px-6 lg:px-8 py-4">
@@ -204,7 +204,7 @@ export default function Learn() {
       </nav>
 
       {/* Main Content */}
-      <div className="max-w-full h-[calc(100vh-73px)] flex">
+      <div className="flex-1 flex flex-col lg:flex-row gap-0">
         {/* Left Panel */}
         <div className="w-full lg:w-1/2 flex flex-col bg-white/90 lg:border-r-4 border-yellow-300 overflow-hidden">
           {/* Instructions Section */}
