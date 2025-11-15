@@ -30,9 +30,7 @@ const NotFound = () => {
           className="w-40 h-40 mx-auto animate-wiggle"
         />
         <div>
-          <h1 className="text-7xl font-black text-purple-600 mb-3">
-            404
-          </h1>
+          <h1 className="text-7xl font-black text-purple-600 mb-3">404</h1>
           <h2 className="text-3xl font-black text-gray-800">
             Oops! iQuack is confused! 🦆
           </h2>
@@ -41,7 +39,8 @@ const NotFound = () => {
           </p>
         </div>
         <p className="text-gray-700 max-w-md font-semibold">
-          Don't worry! Let's get you back to learning HTML. iQuack is waiting for you!
+          Don't worry! Let's get you back to learning HTML. iQuack is waiting
+          for you!
         </p>
         <Link to="/">
           <Button className="bg-gradient-to-r from-purple-500 to-pink-500 hover:shadow-lg transition-all text-white font-black text-lg px-8 py-3 rounded-full">

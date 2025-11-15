@@ -49,9 +49,9 @@ export default function Home() {
                 I'm iQuack!
               </h2>
               <p className="text-lg sm:text-xl text-gray-700 font-semibold leading-relaxed">
-                Ready to learn HTML and become a super coder? 💻 Let's build awesome
-                websites together! I'll be your guide, and you'll be amazed at what
-                you can create!
+                Ready to learn HTML and become a super coder? 💻 Let's build
+                awesome websites together! I'll be your guide, and you'll be
+                amazed at what you can create!
               </p>
             </div>
 
@@ -78,7 +78,9 @@ export default function Home() {
               <div className="bg-white rounded-2xl p-4 shadow-lg border-4 border-yellow-300 flex gap-3">
                 <span className="text-3xl">💾</span>
                 <div>
-                  <h3 className="font-bold text-gray-800">Remember Everything</h3>
+                  <h3 className="font-bold text-gray-800">
+                    Remember Everything
+                  </h3>
                   <p className="text-sm text-gray-600">
                     Your progress is saved automatically!
                   </p>

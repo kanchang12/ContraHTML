@@ -27,8 +27,7 @@ const LESSONS: Lesson[] = [
         instruction:
           "Let's add text to our heading! Type 'Hello World!' between the opening <h1> and closing </h1> tags.",
         hint: "The text should go between > and <",
-        validation: (code) =>
-          code.includes("Hello") && code.includes("World"),
+        validation: (code) => code.includes("Hello") && code.includes("World"),
       },
     ],
   },
@@ -36,8 +35,7 @@ const LESSONS: Lesson[] = [
     id: "lesson-2",
     title: "Multiple Paragraphs",
     description: "Learn to use paragraph tags",
-    initialCode:
-      "<h1>My Page</h1>\n<p></p>\n<p></p>",
+    initialCode: "<h1>My Page</h1>\n<p></p>\n<p></p>",
     targetCode:
       "<h1>My Page</h1>\n<p>This is my first paragraph.</p>\n<p>This is my second paragraph.</p>",
     steps: [
@@ -45,15 +43,13 @@ const LESSONS: Lesson[] = [
         instruction:
           "Add text to the first paragraph: 'This is my first paragraph.'",
         hint: "Click between the first <p> and </p> tags",
-        validation: (code) =>
-          code.includes("This is my first paragraph"),
+        validation: (code) => code.includes("This is my first paragraph"),
       },
       {
         instruction:
           "Add text to the second paragraph: 'This is my second paragraph.'",
         hint: "Click between the second <p> and </p> tags",
-        validation: (code) =>
-          code.includes("This is my second paragraph"),
+        validation: (code) => code.includes("This is my second paragraph"),
       },
     ],
   },
@@ -68,19 +64,17 @@ const LESSONS: Lesson[] = [
     steps: [
       {
         instruction:
-          'Change the heading color from blue to red. Find color: blue and change blue to red',
+          "Change the heading color from blue to red. Find color: blue and change blue to red",
         hint: "Look for the word 'blue' in the first line",
         validation: (code) =>
-          code.includes('color: red') &&
-          code.includes("<h1"),
+          code.includes("color: red") && code.includes("<h1"),
       },
       {
         instruction:
-          'Change the paragraph color from green to purple. Find color: green and change it to purple',
+          "Change the paragraph color from green to purple. Find color: green and change it to purple",
         hint: "Look for the word 'green' in the second line",
         validation: (code) =>
-          code.includes("color: purple") &&
-          code.includes("<p"),
+          code.includes("color: purple") && code.includes("<p"),
       },
     ],
   },
@@ -114,8 +108,7 @@ const LESSONS: Lesson[] = [
     id: "lesson-5",
     title: "Add an Image",
     description: "Learn about image tags",
-    initialCode:
-      '<h1>My Picture</h1>\n<img src="" alt="A happy face">',
+    initialCode: '<h1>My Picture</h1>\n<img src="" alt="A happy face">',
     targetCode:
       '<h1>My Picture</h1>\n<img src="https://via.placeholder.com/200" alt="A happy face">',
     steps: [
@@ -123,8 +116,7 @@ const LESSONS: Lesson[] = [
         instruction:
           'Add an image URL. Replace the empty src="" with src="https://via.placeholder.com/200"',
         hint: "You need to add the URL between the quotes in src=",
-        validation: (code) =>
-          code.includes("https://via.placeholder.com/200"),
+        validation: (code) => code.includes("https://via.placeholder.com/200"),
       },
     ],
   },
@@ -189,15 +181,13 @@ const LESSONS: Lesson[] = [
     title: "Links",
     description: "Learn to create clickable links",
     initialCode: '<a href="">Click here</a>',
-    targetCode:
-      '<a href="https://www.google.com">Click here</a>',
+    targetCode: '<a href="https://www.google.com">Click here</a>',
     steps: [
       {
         instruction:
           'Add a website URL to the link. Put "https://www.google.com" in the href=""',
         hint: "Replace the empty quotes with a URL",
-        validation: (code) =>
-          code.includes("https://www.google.com"),
+        validation: (code) => code.includes("https://www.google.com"),
       },
     ],
   },
@@ -206,22 +196,17 @@ const LESSONS: Lesson[] = [
     title: "Ordered List",
     description: "Learn numbered lists",
     initialCode: "<ol>\n  <li>First</li>\n  <li>Second</li>\n</ol>",
-    targetCode:
-      "<ol>\n  <li>First Step</li>\n  <li>Second Step</li>\n</ol>",
+    targetCode: "<ol>\n  <li>First Step</li>\n  <li>Second Step</li>\n</ol>",
     steps: [
       {
-        instruction:
-          'Change "First" to "First Step"',
+        instruction: 'Change "First" to "First Step"',
         hint: "Find the first <li>",
-        validation: (code) =>
-          code.includes("First Step"),
+        validation: (code) => code.includes("First Step"),
       },
       {
-        instruction:
-          'Change "Second" to "Second Step"',
+        instruction: 'Change "Second" to "Second Step"',
         hint: "Find the second <li>",
-        validation: (code) =>
-          code.includes("Second Step"),
+        validation: (code) => code.includes("Second Step"),
       },
     ],
   },
@@ -229,17 +214,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-12",
     title: "Change Background Color",
     description: "Learn to style the background",
-    initialCode:
-      '<div style="background-color: yellow;">Hello!</div>',
-    targetCode:
-      '<div style="background-color: lightblue;">Hello!</div>',
+    initialCode: '<div style="background-color: yellow;">Hello!</div>',
+    targetCode: '<div style="background-color: lightblue;">Hello!</div>',
     steps: [
       {
-        instruction:
-          'Change the background color from yellow to lightblue',
+        instruction: "Change the background color from yellow to lightblue",
         hint: "Find background-color: yellow and change it",
-        validation: (code) =>
-          code.includes("background-color: lightblue"),
+        validation: (code) => code.includes("background-color: lightblue"),
       },
     ],
   },
@@ -275,17 +256,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-15",
     title: "Text Size with Font Size",
     description: "Learn to change text size",
-    initialCode:
-      '<p style="font-size: 16px;">Normal text</p>',
-    targetCode:
-      '<p style="font-size: 32px;">Normal text</p>',
+    initialCode: '<p style="font-size: 16px;">Normal text</p>',
+    targetCode: '<p style="font-size: 32px;">Normal text</p>',
     steps: [
       {
-        instruction:
-          'Make the text bigger! Change font-size from 16px to 32px',
+        instruction: "Make the text bigger! Change font-size from 16px to 32px",
         hint: "Find font-size: 16px",
-        validation: (code) =>
-          code.includes("font-size: 32px"),
+        validation: (code) => code.includes("font-size: 32px"),
       },
     ],
   },
@@ -293,17 +270,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-16",
     title: "Even Bigger Text",
     description: "Make text really big",
-    initialCode:
-      '<p style="font-size: 20px;">Make me big!</p>',
-    targetCode:
-      '<p style="font-size: 48px;">Make me big!</p>',
+    initialCode: '<p style="font-size: 20px;">Make me big!</p>',
+    targetCode: '<p style="font-size: 48px;">Make me big!</p>',
     steps: [
       {
-        instruction:
-          'Change font-size from 20px to 48px to make it huge!',
+        instruction: "Change font-size from 20px to 48px to make it huge!",
         hint: "Find 20px and replace with 48px",
-        validation: (code) =>
-          code.includes("font-size: 48px"),
+        validation: (code) => code.includes("font-size: 48px"),
       },
     ],
   },
@@ -311,17 +284,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-17",
     title: "Text Alignment",
     description: "Learn to align text",
-    initialCode:
-      '<p style="text-align: left;">Left aligned</p>',
-    targetCode:
-      '<p style="text-align: center;">Left aligned</p>',
+    initialCode: '<p style="text-align: left;">Left aligned</p>',
+    targetCode: '<p style="text-align: center;">Left aligned</p>',
     steps: [
       {
-        instruction:
-          'Change text-align from left to center',
+        instruction: "Change text-align from left to center",
         hint: "Find text-align: left",
-        validation: (code) =>
-          code.includes("text-align: center"),
+        validation: (code) => code.includes("text-align: center"),
       },
     ],
   },
@@ -329,17 +298,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-18",
     title: "Right Alignment",
     description: "Align text to the right",
-    initialCode:
-      '<p style="text-align: center;">Center me</p>',
-    targetCode:
-      '<p style="text-align: right;">Center me</p>',
+    initialCode: '<p style="text-align: center;">Center me</p>',
+    targetCode: '<p style="text-align: right;">Center me</p>',
     steps: [
       {
-        instruction:
-          'Change text-align from center to right',
+        instruction: "Change text-align from center to right",
         hint: "Find center and replace it",
-        validation: (code) =>
-          code.includes("text-align: right"),
+        validation: (code) => code.includes("text-align: right"),
       },
     ],
   },
@@ -354,10 +319,9 @@ const LESSONS: Lesson[] = [
     steps: [
       {
         instruction:
-          'Increase the padding from 10px to 30px for more space inside',
+          "Increase the padding from 10px to 30px for more space inside",
         hint: "Find padding: 10px",
-        validation: (code) =>
-          code.includes("padding: 30px"),
+        validation: (code) => code.includes("padding: 30px"),
       },
     ],
   },
@@ -365,17 +329,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-20",
     title: "Outside Spacing with Margin",
     description: "Learn margin for outside spacing",
-    initialCode:
-      '<p style="margin: 5px;">Spaced paragraph</p>',
-    targetCode:
-      '<p style="margin: 20px;">Spaced paragraph</p>',
+    initialCode: '<p style="margin: 5px;">Spaced paragraph</p>',
+    targetCode: '<p style="margin: 20px;">Spaced paragraph</p>',
     steps: [
       {
-        instruction:
-          'Change margin from 5px to 20px',
+        instruction: "Change margin from 5px to 20px",
         hint: "Find margin: 5px",
-        validation: (code) =>
-          code.includes("margin: 20px"),
+        validation: (code) => code.includes("margin: 20px"),
       },
     ],
   },
@@ -389,8 +349,7 @@ const LESSONS: Lesson[] = [
       {
         instruction: "Add text 'Click Me!' inside the button tag",
         hint: "Type between <button> and </button>",
-        validation: (code) =>
-          code.includes("<button>Click Me!</button>"),
+        validation: (code) => code.includes("<button>Click Me!</button>"),
       },
     ],
   },
@@ -398,16 +357,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-22",
     title: "Input Field",
     description: "Learn input tags for text entry",
-    initialCode: "<input type=\"text\" placeholder=\"\">",
-    targetCode:
-      "<input type=\"text\" placeholder=\"Enter your name\">",
+    initialCode: '<input type="text" placeholder="">',
+    targetCode: '<input type="text" placeholder="Enter your name">',
     steps: [
       {
-        instruction:
-          'Add placeholder text "Enter your name"',
+        instruction: 'Add placeholder text "Enter your name"',
         hint: "Put the text between the quotes in placeholder=",
-        validation: (code) =>
-          code.includes('placeholder="Enter your name"'),
+        validation: (code) => code.includes('placeholder="Enter your name"'),
       },
     ],
   },
@@ -415,16 +371,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-23",
     title: "Label for Input",
     description: "Learn label tags",
-    initialCode:
-      "<label></label>\n<input type=\"text\">",
-    targetCode:
-      "<label>Your Name:</label>\n<input type=\"text\">",
+    initialCode: '<label></label>\n<input type="text">',
+    targetCode: '<label>Your Name:</label>\n<input type="text">',
     steps: [
       {
         instruction: "Add text 'Your Name:' inside the label tag",
         hint: "Type between <label> and </label>",
-        validation: (code) =>
-          code.includes("<label>Your Name:</label>"),
+        validation: (code) => code.includes("<label>Your Name:</label>"),
       },
     ],
   },
@@ -433,16 +386,14 @@ const LESSONS: Lesson[] = [
     title: "Simple Form",
     description: "Combine input and label",
     initialCode:
-      "<form>\n  <label>Email:</label>\n  <input type=\"email\">\n</form>",
+      '<form>\n  <label>Email:</label>\n  <input type="email">\n</form>',
     targetCode:
-      "<form>\n  <label>Email:</label>\n  <input type=\"email\" placeholder=\"your@email.com\">\n</form>",
+      '<form>\n  <label>Email:</label>\n  <input type="email" placeholder="your@email.com">\n</form>',
     steps: [
       {
-        instruction:
-          'Add placeholder "your@email.com" to the input',
-        hint: "Add placeholder=\"your@email.com\" to the input tag",
-        validation: (code) =>
-          code.includes('placeholder="your@email.com"'),
+        instruction: 'Add placeholder "your@email.com" to the input',
+        hint: 'Add placeholder="your@email.com" to the input tag',
+        validation: (code) => code.includes('placeholder="your@email.com"'),
       },
     ],
   },
@@ -450,15 +401,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-25",
     title: "Checkbox",
     description: "Learn checkbox input",
-    initialCode:
-      "<input type=\"checkbox\"> Agree to terms",
-    targetCode:
-      "<input type=\"checkbox\"> Agree to terms",
+    initialCode: '<input type="checkbox"> Agree to terms',
+    targetCode: '<input type="checkbox"> Agree to terms',
     steps: [
       {
         instruction: "Great! You can see how a checkbox looks",
         hint: "Just read the code",
-        validation: (code) => code.includes("type=\"checkbox\""),
+        validation: (code) => code.includes('type="checkbox"'),
       },
     ],
   },
@@ -466,15 +415,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-26",
     title: "Radio Button",
     description: "Learn radio button input",
-    initialCode:
-      "<input type=\"radio\"> Yes\n<input type=\"radio\"> No",
-    targetCode:
-      "<input type=\"radio\"> Yes\n<input type=\"radio\"> No",
+    initialCode: '<input type="radio"> Yes\n<input type="radio"> No',
+    targetCode: '<input type="radio"> Yes\n<input type="radio"> No',
     steps: [
       {
         instruction: "Radio buttons let you pick one option",
         hint: "Just read the code",
-        validation: (code) => code.includes("type=\"radio\""),
+        validation: (code) => code.includes('type="radio"'),
       },
     ],
   },
@@ -490,8 +437,7 @@ const LESSONS: Lesson[] = [
       {
         instruction: "Click the dropdown to see the options!",
         hint: "Just read the code",
-        validation: (code) =>
-          code.includes("<select>"),
+        validation: (code) => code.includes("<select>"),
       },
     ],
   },
@@ -499,14 +445,11 @@ const LESSONS: Lesson[] = [
     id: "lesson-28",
     title: "Textarea for Long Text",
     description: "Learn textarea for multiple lines",
-    initialCode:
-      "<textarea placeholder=\"\"></textarea>",
-    targetCode:
-      "<textarea placeholder=\"Write your message here\"></textarea>",
+    initialCode: '<textarea placeholder=""></textarea>',
+    targetCode: '<textarea placeholder="Write your message here"></textarea>',
     steps: [
       {
-        instruction:
-          'Add placeholder "Write your message here"',
+        instruction: 'Add placeholder "Write your message here"',
         hint: "Put text in the placeholder attribute",
         validation: (code) =>
           code.includes('placeholder="Write your message here"'),
@@ -517,10 +460,8 @@ const LESSONS: Lesson[] = [
     id: "lesson-29",
     title: "Table Introduction",
     description: "Learn basic table structure",
-    initialCode:
-      "<table>\n  <tr><td>Cell 1</td></tr>\n</table>",
-    targetCode:
-      "<table>\n  <tr><td>Cell 1</td></tr>\n</table>",
+    initialCode: "<table>\n  <tr><td>Cell 1</td></tr>\n</table>",
+    targetCode: "<table>\n  <tr><td>Cell 1</td></tr>\n</table>",
     steps: [
       {
         instruction: "Tables organize data in rows and columns!",
@@ -549,10 +490,8 @@ const LESSONS: Lesson[] = [
     id: "lesson-31",
     title: "Division/Container",
     description: "Learn div tags",
-    initialCode:
-      "<div style=\"background-color: lightgreen;\">Content</div>",
-    targetCode:
-      "<div style=\"background-color: lightgreen;\">Content</div>",
+    initialCode: '<div style="background-color: lightgreen;">Content</div>',
+    targetCode: '<div style="background-color: lightgreen;">Content</div>',
     steps: [
       {
         instruction: "Divs are containers to group content together",
@@ -565,10 +504,8 @@ const LESSONS: Lesson[] = [
     id: "lesson-32",
     title: "Span for Inline Styling",
     description: "Learn span for styling inline text",
-    initialCode:
-      "<p>This is <span style=\"color: red;\">red</span> text</p>",
-    targetCode:
-      "<p>This is <span style=\"color: red;\">red</span> text</p>",
+    initialCode: '<p>This is <span style="color: red;">red</span> text</p>',
+    targetCode: '<p>This is <span style="color: red;">red</span> text</p>',
     steps: [
       {
         instruction: "Span styles specific words within a line",
@@ -581,10 +518,8 @@ const LESSONS: Lesson[] = [
     id: "lesson-33",
     title: "Comment in HTML",
     description: "Learn HTML comments",
-    initialCode:
-      "<!-- This is a comment -->\n<p>Visible content</p>",
-    targetCode:
-      "<!-- This is a comment -->\n<p>Visible content</p>",
+    initialCode: "<!-- This is a comment -->\n<p>Visible content</p>",
+    targetCode: "<!-- This is a comment -->\n<p>Visible content</p>",
     steps: [
       {
         instruction: "Comments don't show on the page!",
@@ -597,10 +532,8 @@ const LESSONS: Lesson[] = [
     id: "lesson-34",
     title: "Make Text Underline",
     description: "Learn the u tag",
-    initialCode:
-      "<p>This is <u>underlined</u> text</p>",
-    targetCode:
-      "<p>This is <u>underlined</u> text</p>",
+    initialCode: "<p>This is <u>underlined</u> text</p>",
+    targetCode: "<p>This is <u>underlined</u> text</p>",
     steps: [
       {
         instruction: "The <u> tag makes text underlined",
@@ -613,10 +546,8 @@ const LESSONS: Lesson[] = [
     id: "lesson-35",
     title: "Strikethrough Text",
     description: "Learn the del tag",
-    initialCode:
-      "<p><del>Old price: 100</del> New price: 50</p>",
-    targetCode:
-      "<p><del>Old price: 100</del> New price: 50</p>",
+    initialCode: "<p><del>Old price: 100</del> New price: 50</p>",
+    targetCode: "<p><del>Old price: 100</del> New price: 50</p>",
     steps: [
       {
         instruction: "The <del> tag shows deleted text with a line through it",
@@ -629,10 +560,8 @@ const LESSONS: Lesson[] = [
     id: "lesson-36",
     title: "Superscript",
     description: "Learn the sup tag",
-    initialCode:
-      "<p>E = mc<sup>2</sup></p>",
-    targetCode:
-      "<p>E = mc<sup>2</sup></p>",
+    initialCode: "<p>E = mc<sup>2</sup></p>",
+    targetCode: "<p>E = mc<sup>2</sup></p>",
     steps: [
       {
         instruction: "The <sup> tag makes text smaller and raised",
@@ -645,10 +574,8 @@ const LESSONS: Lesson[] = [
     id: "lesson-37",
     title: "Subscript",
     description: "Learn the sub tag",
-    initialCode:
-      "<p>H<sub>2</sub>O</p>",
-    targetCode:
-      "<p>H<sub>2</sub>O</p>",
+    initialCode: "<p>H<sub>2</sub>O</p>",
+    targetCode: "<p>H<sub>2</sub>O</p>",
     steps: [
       {
         instruction: "The <sub> tag makes text smaller and lowered",
@@ -661,10 +588,8 @@ const LESSONS: Lesson[] = [
     id: "lesson-38",
     title: "Blockquote",
     description: "Learn blockquote for quotes",
-    initialCode:
-      "<blockquote>This is a famous quote!</blockquote>",
-    targetCode:
-      "<blockquote>This is a famous quote!</blockquote>",
+    initialCode: "<blockquote>This is a famous quote!</blockquote>",
+    targetCode: "<blockquote>This is a famous quote!</blockquote>",
     steps: [
       {
         instruction: "Blockquote shows important quotes with indentation",
@@ -677,10 +602,8 @@ const LESSONS: Lesson[] = [
     id: "lesson-39",
     title: "Code Block",
     description: "Learn code tag",
-    initialCode:
-      "<p>The <code>console.log()</code> function prints text</p>",
-    targetCode:
-      "<p>The <code>console.log()</code> function prints text</p>",
+    initialCode: "<p>The <code>console.log()</code> function prints text</p>",
+    targetCode: "<p>The <code>console.log()</code> function prints text</p>",
     steps: [
       {
         instruction: "The <code> tag shows computer code in a special font",
@@ -693,13 +616,12 @@ const LESSONS: Lesson[] = [
     id: "lesson-40",
     title: "Preformatted Text",
     description: "Learn pre tag",
-    initialCode:
-      "<pre>  Line 1\n    Line 2</pre>",
-    targetCode:
-      "<pre>  Line 1\n    Line 2</pre>",
+    initialCode: "<pre>  Line 1\n    Line 2</pre>",
+    targetCode: "<pre>  Line 1\n    Line 2</pre>",
     steps: [
       {
-        instruction: "The <pre> tag keeps spaces and line breaks exactly as you type them",
+        instruction:
+          "The <pre> tag keeps spaces and line breaks exactly as you type them",
         hint: "Just read the code",
         validation: (code) => code.includes("<pre>"),
       },
@@ -709,10 +631,8 @@ const LESSONS: Lesson[] = [
     id: "lesson-41",
     title: "Emphasize Text",
     description: "Mark important text",
-    initialCode:
-      "<p>This is <mark>highlighted</mark> text</p>",
-    targetCode:
-      "<p>This is <mark>highlighted</mark> text</p>",
+    initialCode: "<p>This is <mark>highlighted</mark> text</p>",
+    targetCode: "<p>This is <mark>highlighted</mark> text</p>",
     steps: [
       {
         instruction: "The <mark> tag highlights text like a marker pen",
@@ -725,10 +645,8 @@ const LESSONS: Lesson[] = [
     id: "lesson-42",
     title: "Small Text",
     description: "Learn the small tag",
-    initialCode:
-      "<p>Large text <small>small text</small></p>",
-    targetCode:
-      "<p>Large text <small>small text</small></p>",
+    initialCode: "<p>Large text <small>small text</small></p>",
+    targetCode: "<p>Large text <small>small text</small></p>",
     steps: [
       {
         instruction: "The <small> tag makes text smaller, like footnotes",
@@ -742,12 +660,13 @@ const LESSONS: Lesson[] = [
     title: "Break Words",
     description: "Learn word break",
     initialCode:
-      "<p style=\"word-break: break-all;\">verylongwordthatcannotfit</p>",
+      '<p style="word-break: break-all;">verylongwordthatcannotfit</p>',
     targetCode:
-      "<p style=\"word-break: break-all;\">verylongwordthatcannotfit</p>",
+      '<p style="word-break: break-all;">verylongwordthatcannotfit</p>',
     steps: [
       {
-        instruction: "word-break allows long words to break into multiple lines",
+        instruction:
+          "word-break allows long words to break into multiple lines",
         hint: "Just read the code",
         validation: (code) => code.includes("word-break"),
       },
@@ -757,13 +676,12 @@ const LESSONS: Lesson[] = [
     id: "lesson-44",
     title: "White Space Handling",
     description: "Learn white-space property",
-    initialCode:
-      "<p style=\"white-space: pre;\">Keeps   spaces</p>",
-    targetCode:
-      "<p style=\"white-space: pre;\">Keeps   spaces</p>",
+    initialCode: '<p style="white-space: pre;">Keeps   spaces</p>',
+    targetCode: '<p style="white-space: pre;">Keeps   spaces</p>',
     steps: [
       {
-        instruction: "white-space controls how spaces and new lines are handled",
+        instruction:
+          "white-space controls how spaces and new lines are handled",
         hint: "Just read the code",
         validation: (code) => code.includes("white-space"),
       },
@@ -773,17 +691,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-45",
     title: "Border Style",
     description: "Learn border property",
-    initialCode:
-      "<div style=\"border: 2px solid black;\">Bordered box</div>",
-    targetCode:
-      "<div style=\"border: 2px solid red;\">Bordered box</div>",
+    initialCode: '<div style="border: 2px solid black;">Bordered box</div>',
+    targetCode: '<div style="border: 2px solid red;">Bordered box</div>',
     steps: [
       {
-        instruction:
-          'Change the border color from black to red',
+        instruction: "Change the border color from black to red",
         hint: "Find border: 2px solid black",
-        validation: (code) =>
-          code.includes("border: 2px solid red"),
+        validation: (code) => code.includes("border: 2px solid red"),
       },
     ],
   },
@@ -792,16 +706,15 @@ const LESSONS: Lesson[] = [
     title: "Border Radius",
     description: "Make corners rounded",
     initialCode:
-      "<div style=\"background-color: blue; border-radius: 5px; padding: 20px;\">Rounded corners</div>",
+      '<div style="background-color: blue; border-radius: 5px; padding: 20px;">Rounded corners</div>',
     targetCode:
-      "<div style=\"background-color: blue; border-radius: 15px; padding: 20px;\">Rounded corners</div>",
+      '<div style="background-color: blue; border-radius: 15px; padding: 20px;">Rounded corners</div>',
     steps: [
       {
         instruction:
-          'Change border-radius from 5px to 15px for rounder corners',
+          "Change border-radius from 5px to 15px for rounder corners",
         hint: "Find border-radius: 5px",
-        validation: (code) =>
-          code.includes("border-radius: 15px"),
+        validation: (code) => code.includes("border-radius: 15px"),
       },
     ],
   },
@@ -810,15 +723,14 @@ const LESSONS: Lesson[] = [
     title: "Shadow Effect",
     description: "Add shadow to boxes",
     initialCode:
-      "<div style=\"background-color: yellow; box-shadow: 0px 0px 5px gray; padding: 20px;\">Shadowy</div>",
+      '<div style="background-color: yellow; box-shadow: 0px 0px 5px gray; padding: 20px;">Shadowy</div>',
     targetCode:
-      "<div style=\"background-color: yellow; box-shadow: 0px 0px 5px gray; padding: 20px;\">Shadowy</div>",
+      '<div style="background-color: yellow; box-shadow: 0px 0px 5px gray; padding: 20px;">Shadowy</div>',
     steps: [
       {
         instruction: "box-shadow creates a shadow effect around elements",
         hint: "Just read the code",
-        validation: (code) =>
-          code.includes("box-shadow"),
+        validation: (code) => code.includes("box-shadow"),
       },
     ],
   },
@@ -827,16 +739,14 @@ const LESSONS: Lesson[] = [
     title: "Opacity/Transparency",
     description: "Learn opacity property",
     initialCode:
-      "<div style=\"background-color: green; opacity: 1;\">Opaque</div>",
+      '<div style="background-color: green; opacity: 1;">Opaque</div>',
     targetCode:
-      "<div style=\"background-color: green; opacity: 0.5;\">Opaque</div>",
+      '<div style="background-color: green; opacity: 0.5;">Opaque</div>',
     steps: [
       {
-        instruction:
-          'Change opacity from 1 to 0.5 to make it see-through',
+        instruction: "Change opacity from 1 to 0.5 to make it see-through",
         hint: "Find opacity: 1",
-        validation: (code) =>
-          code.includes("opacity: 0.5"),
+        validation: (code) => code.includes("opacity: 0.5"),
       },
     ],
   },
@@ -844,17 +754,14 @@ const LESSONS: Lesson[] = [
     id: "lesson-49",
     title: "Line Height",
     description: "Control spacing between lines",
-    initialCode:
-      "<p style=\"line-height: 1.2;\">Line 1\nLine 2\nLine 3</p>",
-    targetCode:
-      "<p style=\"line-height: 2;\">Line 1\nLine 2\nLine 3</p>",
+    initialCode: '<p style="line-height: 1.2;">Line 1\nLine 2\nLine 3</p>',
+    targetCode: '<p style="line-height: 2;">Line 1\nLine 2\nLine 3</p>',
     steps: [
       {
         instruction:
-          'Change line-height from 1.2 to 2 for more space between lines',
+          "Change line-height from 1.2 to 2 for more space between lines",
         hint: "Find line-height: 1.2",
-        validation: (code) =>
-          code.includes("line-height: 2"),
+        validation: (code) => code.includes("line-height: 2"),
       },
     ],
   },
@@ -862,17 +769,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-50",
     title: "Letter Spacing",
     description: "Add space between letters",
-    initialCode:
-      "<p style=\"letter-spacing: 1px;\">Spaced Text</p>",
-    targetCode:
-      "<p style=\"letter-spacing: 5px;\">Spaced Text</p>",
+    initialCode: '<p style="letter-spacing: 1px;">Spaced Text</p>',
+    targetCode: '<p style="letter-spacing: 5px;">Spaced Text</p>',
     steps: [
       {
-        instruction:
-          'Change letter-spacing from 1px to 5px',
+        instruction: "Change letter-spacing from 1px to 5px",
         hint: "Find letter-spacing: 1px",
-        validation: (code) =>
-          code.includes("letter-spacing: 5px"),
+        validation: (code) => code.includes("letter-spacing: 5px"),
       },
     ],
   },
@@ -880,17 +783,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-51",
     title: "Text Transform",
     description: "Change text case",
-    initialCode:
-      "<p style=\"text-transform: lowercase;\">Hello World</p>",
-    targetCode:
-      "<p style=\"text-transform: uppercase;\">Hello World</p>",
+    initialCode: '<p style="text-transform: lowercase;">Hello World</p>',
+    targetCode: '<p style="text-transform: uppercase;">Hello World</p>',
     steps: [
       {
-        instruction:
-          'Change text-transform from lowercase to uppercase',
+        instruction: "Change text-transform from lowercase to uppercase",
         hint: "Find text-transform: lowercase",
-        validation: (code) =>
-          code.includes("text-transform: uppercase"),
+        validation: (code) => code.includes("text-transform: uppercase"),
       },
     ],
   },
@@ -898,17 +797,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-52",
     title: "Text Decoration",
     description: "Add lines to text",
-    initialCode:
-      "<p style=\"text-decoration: underline;\">Decorated Text</p>",
-    targetCode:
-      "<p style=\"text-decoration: overline;\">Decorated Text</p>",
+    initialCode: '<p style="text-decoration: underline;">Decorated Text</p>',
+    targetCode: '<p style="text-decoration: overline;">Decorated Text</p>',
     steps: [
       {
-        instruction:
-          'Change text-decoration from underline to overline',
+        instruction: "Change text-decoration from underline to overline",
         hint: "Find text-decoration: underline",
-        validation: (code) =>
-          code.includes("text-decoration: overline"),
+        validation: (code) => code.includes("text-decoration: overline"),
       },
     ],
   },
@@ -916,16 +811,13 @@ const LESSONS: Lesson[] = [
     id: "lesson-53",
     title: "Text Shadow",
     description: "Add shadow to text",
-    initialCode:
-      "<p style=\"text-shadow: 2px 2px 4px gray;\">Shadow Text</p>",
-    targetCode:
-      "<p style=\"text-shadow: 2px 2px 4px gray;\">Shadow Text</p>",
+    initialCode: '<p style="text-shadow: 2px 2px 4px gray;">Shadow Text</p>',
+    targetCode: '<p style="text-shadow: 2px 2px 4px gray;">Shadow Text</p>',
     steps: [
       {
         instruction: "text-shadow adds a shadow effect to your text",
         hint: "Just read the code",
-        validation: (code) =>
-          code.includes("text-shadow"),
+        validation: (code) => code.includes("text-shadow"),
       },
     ],
   },
@@ -934,15 +826,14 @@ const LESSONS: Lesson[] = [
     title: "Display Block",
     description: "Learn block display",
     initialCode:
-      "<span style=\"display: block; background-color: pink;\">Block Element</span>",
+      '<span style="display: block; background-color: pink;">Block Element</span>',
     targetCode:
-      "<span style=\"display: block; background-color: pink;\">Block Element</span>",
+      '<span style="display: block; background-color: pink;">Block Element</span>',
     steps: [
       {
         instruction: "display: block makes inline elements take full width",
         hint: "Just read the code",
-        validation: (code) =>
-          code.includes("display: block"),
+        validation: (code) => code.includes("display: block"),
       },
     ],
   },
@@ -951,15 +842,14 @@ const LESSONS: Lesson[] = [
     title: "Display Inline",
     description: "Learn inline display",
     initialCode:
-      "<div style=\"display: inline; background-color: lightblue;\">Inline</div>",
+      '<div style="display: inline; background-color: lightblue;">Inline</div>',
     targetCode:
-      "<div style=\"display: inline; background-color: lightblue;\">Inline</div>",
+      '<div style="display: inline; background-color: lightblue;">Inline</div>',
     steps: [
       {
         instruction: "display: inline makes block elements stay on same line",
         hint: "Just read the code",
-        validation: (code) =>
-          code.includes("display: inline"),
+        validation: (code) => code.includes("display: inline"),
       },
     ],
   },
@@ -968,16 +858,14 @@ const LESSONS: Lesson[] = [
     title: "Width Property",
     description: "Set element width",
     initialCode:
-      "<div style=\"background-color: purple; width: 100px; padding: 10px;\">Width</div>",
+      '<div style="background-color: purple; width: 100px; padding: 10px;">Width</div>',
     targetCode:
-      "<div style=\"background-color: purple; width: 200px; padding: 10px;\">Width</div>",
+      '<div style="background-color: purple; width: 200px; padding: 10px;">Width</div>',
     steps: [
       {
-        instruction:
-          'Change width from 100px to 200px',
+        instruction: "Change width from 100px to 200px",
         hint: "Find width: 100px",
-        validation: (code) =>
-          code.includes("width: 200px"),
+        validation: (code) => code.includes("width: 200px"),
       },
     ],
   },
@@ -986,16 +874,14 @@ const LESSONS: Lesson[] = [
     title: "Height Property",
     description: "Set element height",
     initialCode:
-      "<div style=\"background-color: orange; height: 50px; width: 200px;\">Height</div>",
+      '<div style="background-color: orange; height: 50px; width: 200px;">Height</div>',
     targetCode:
-      "<div style=\"background-color: orange; height: 100px; width: 200px;\">Height</div>",
+      '<div style="background-color: orange; height: 100px; width: 200px;">Height</div>',
     steps: [
       {
-        instruction:
-          'Change height from 50px to 100px',
+        instruction: "Change height from 50px to 100px",
         hint: "Find height: 50px",
-        validation: (code) =>
-          code.includes("height: 100px"),
+        validation: (code) => code.includes("height: 100px"),
       },
     ],
   },
@@ -1004,16 +890,14 @@ const LESSONS: Lesson[] = [
     title: "Max Width",
     description: "Limit maximum width",
     initialCode:
-      "<div style=\"background-color: teal; max-width: 200px; padding: 10px;\">Max Width</div>",
+      '<div style="background-color: teal; max-width: 200px; padding: 10px;">Max Width</div>',
     targetCode:
-      "<div style=\"background-color: teal; max-width: 400px; padding: 10px;\">Max Width</div>",
+      '<div style="background-color: teal; max-width: 400px; padding: 10px;">Max Width</div>',
     steps: [
       {
-        instruction:
-          'Change max-width from 200px to 400px',
+        instruction: "Change max-width from 200px to 400px",
         hint: "Find max-width: 200px",
-        validation: (code) =>
-          code.includes("max-width: 400px"),
+        validation: (code) => code.includes("max-width: 400px"),
       },
     ],
   },
@@ -1022,15 +906,14 @@ const LESSONS: Lesson[] = [
     title: "Float Elements",
     description: "Learn float property",
     initialCode:
-      "<img style=\"float: left;\" src=\"https://via.placeholder.com/100\" alt=\"Image\">\n<p>Text wraps around image</p>",
+      '<img style="float: left;" src="https://via.placeholder.com/100" alt="Image">\n<p>Text wraps around image</p>',
     targetCode:
-      "<img style=\"float: left;\" src=\"https://via.placeholder.com/100\" alt=\"Image\">\n<p>Text wraps around image</p>",
+      '<img style="float: left;" src="https://via.placeholder.com/100" alt="Image">\n<p>Text wraps around image</p>',
     steps: [
       {
         instruction: "float: left makes content wrap around images",
         hint: "Just read the code",
-        validation: (code) =>
-          code.includes("float: left"),
+        validation: (code) => code.includes("float: left"),
       },
     ],
   },
@@ -1039,15 +922,14 @@ const LESSONS: Lesson[] = [
     title: "Clear Float",
     description: "Stop floating with clear",
     initialCode:
-      "<div style=\"float: left;\">Floating</div>\n<div style=\"clear: left;\">Cleared</div>",
+      '<div style="float: left;">Floating</div>\n<div style="clear: left;">Cleared</div>',
     targetCode:
-      "<div style=\"float: left;\">Floating</div>\n<div style=\"clear: left;\">Cleared</div>",
+      '<div style="float: left;">Floating</div>\n<div style="clear: left;">Cleared</div>',
     steps: [
       {
         instruction: "clear stops the float effect",
         hint: "Just read the code",
-        validation: (code) =>
-          code.includes("clear: left"),
+        validation: (code) => code.includes("clear: left"),
       },
     ],
   },
@@ -1056,15 +938,14 @@ const LESSONS: Lesson[] = [
     title: "Overflow Hidden",
     description: "Hide overflowing content",
     initialCode:
-      "<div style=\"overflow: hidden; height: 50px; background-color: lightcyan;\">This text is really long and will overflow</div>",
+      '<div style="overflow: hidden; height: 50px; background-color: lightcyan;">This text is really long and will overflow</div>',
     targetCode:
-      "<div style=\"overflow: hidden; height: 50px; background-color: lightcyan;\">This text is really long and will overflow</div>",
+      '<div style="overflow: hidden; height: 50px; background-color: lightcyan;">This text is really long and will overflow</div>',
     steps: [
       {
         instruction: "overflow: hidden hides content that's too big",
         hint: "Just read the code",
-        validation: (code) =>
-          code.includes("overflow: hidden"),
+        validation: (code) => code.includes("overflow: hidden"),
       },
     ],
   },
@@ -1073,15 +954,14 @@ const LESSONS: Lesson[] = [
     title: "Overflow Scroll",
     description: "Add scrollbar for overflow",
     initialCode:
-      "<div style=\"overflow: scroll; height: 100px; background-color: lightyellow;\">Long content here that needs scrolling to see everything</div>",
+      '<div style="overflow: scroll; height: 100px; background-color: lightyellow;">Long content here that needs scrolling to see everything</div>',
     targetCode:
-      "<div style=\"overflow: scroll; height: 100px; background-color: lightyellow;\">Long content here that needs scrolling to see everything</div>",
+      '<div style="overflow: scroll; height: 100px; background-color: lightyellow;">Long content here that needs scrolling to see everything</div>',
     steps: [
       {
         instruction: "overflow: scroll adds a scrollbar",
         hint: "Just read the code",
-        validation: (code) =>
-          code.includes("overflow: scroll"),
+        validation: (code) => code.includes("overflow: scroll"),
       },
     ],
   },
@@ -1090,15 +970,14 @@ const LESSONS: Lesson[] = [
     title: "Position Relative",
     description: "Learn relative positioning",
     initialCode:
-      "<div style=\"position: relative; left: 20px; background-color: lightpink;\">Positioned</div>",
+      '<div style="position: relative; left: 20px; background-color: lightpink;">Positioned</div>',
     targetCode:
-      "<div style=\"position: relative; left: 20px; background-color: lightpink;\">Positioned</div>",
+      '<div style="position: relative; left: 20px; background-color: lightpink;">Positioned</div>',
     steps: [
       {
         instruction: "position: relative moves elements while keeping space",
         hint: "Just read the code",
-        validation: (code) =>
-          code.includes("position: relative"),
+        validation: (code) => code.includes("position: relative"),
       },
     ],
   },
@@ -1107,15 +986,15 @@ const LESSONS: Lesson[] = [
     title: "Position Absolute",
     description: "Learn absolute positioning",
     initialCode:
-      "<div style=\"position: absolute; top: 50px; left: 50px; background-color: lightcoral;\">Absolute</div>",
+      '<div style="position: absolute; top: 50px; left: 50px; background-color: lightcoral;">Absolute</div>',
     targetCode:
-      "<div style=\"position: absolute; top: 50px; left: 50px; background-color: lightcoral;\">Absolute</div>",
+      '<div style="position: absolute; top: 50px; left: 50px; background-color: lightcoral;">Absolute</div>',
     steps: [
       {
-        instruction: "position: absolute places elements exactly where you want",
+        instruction:
+          "position: absolute places elements exactly where you want",
         hint: "Just read the code",
-        validation: (code) =>
-          code.includes("position: absolute"),
+        validation: (code) => code.includes("position: absolute"),
       },
     ],
   },
@@ -1124,15 +1003,15 @@ const LESSONS: Lesson[] = [
     title: "Z-Index",
     description: "Control layering of elements",
     initialCode:
-      "<div style=\"position: absolute; z-index: 10; background-color: red; width: 100px; height: 100px;\">Top</div>\n<div style=\"position: absolute; z-index: 1; background-color: blue; width: 100px; height: 100px; top: 50px; left: 50px;\">Bottom</div>",
+      '<div style="position: absolute; z-index: 10; background-color: red; width: 100px; height: 100px;">Top</div>\n<div style="position: absolute; z-index: 1; background-color: blue; width: 100px; height: 100px; top: 50px; left: 50px;">Bottom</div>',
     targetCode:
-      "<div style=\"position: absolute; z-index: 10; background-color: red; width: 100px; height: 100px;\">Top</div>\n<div style=\"position: absolute; z-index: 1; background-color: blue; width: 100px; height: 100px; top: 50px; left: 50px;\">Bottom</div>",
+      '<div style="position: absolute; z-index: 10; background-color: red; width: 100px; height: 100px;">Top</div>\n<div style="position: absolute; z-index: 1; background-color: blue; width: 100px; height: 100px; top: 50px; left: 50px;">Bottom</div>',
     steps: [
       {
-        instruction: "z-index controls which element appears on top (higher = on top)",
+        instruction:
+          "z-index controls which element appears on top (higher = on top)",
         hint: "Just read the code",
-        validation: (code) =>
-          code.includes("z-index"),
+        validation: (code) => code.includes("z-index"),
       },
     ],
   },
@@ -1154,9 +1033,7 @@ export const getNextLesson = (currentLessonId: string): Lesson | undefined => {
   return undefined;
 };
 
-export const initializeLessonProgress = (
-  lesson: Lesson,
-): LessonProgress => {
+export const initializeLessonProgress = (lesson: Lesson): LessonProgress => {
   return {
     id: lesson.id,
     title: lesson.title,

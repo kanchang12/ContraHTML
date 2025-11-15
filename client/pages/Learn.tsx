@@ -171,8 +171,7 @@ export default function Learn() {
     );
   }
 
-  const stepCompletion =
-    ((currentStepIndex + 1) / lesson.steps.length) * 100;
+  const stepCompletion = ((currentStepIndex + 1) / lesson.steps.length) * 100;
   const isLessonComplete = progress.completed;
   const canGoNext =
     currentStepIndex === lesson.steps.length - 1 && isStepComplete();
@@ -245,7 +244,8 @@ export default function Learn() {
                     You're Awesome!
                   </h3>
                   <p className="text-green-700 font-bold text-lg">
-                    You completed "{lesson.title}"! iQuack is so proud of you! 🦆
+                    You completed "{lesson.title}"! iQuack is so proud of you!
+                    🦆
                   </p>
                   <p className="text-green-700 font-semibold mt-3">
                     Ready for the next challenge?
